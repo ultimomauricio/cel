@@ -1,56 +1,79 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 body {
   margin: 0;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   background: #f5f5f5;
   color: #222;
   overflow-x: hidden;
 }
+
+/* HEADER */
 header {
   background: #009ee8;
-  padding: 30px;
+  padding: 25px;
   color: white;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+
+  /* Mantém tudo alinhado à esquerda */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
 header h1 {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-size: 24px;
 }
+
+/* MENU */
 nav ul {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   list-style: none;
   padding: 0;
   margin: 0;
+
+  /* Permite quebrar linha no celular */
+  flex-wrap: wrap;
+
+  /* Mantém alinhado à esquerda */
+  justify-content: flex-start;
 }
+
 nav a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
   transition: 0.3s;
 }
+
 nav a:hover {
   color: #ffdd57;
 }
+
+/* SECTIONS */
 .topic {
   padding: 120px 20px 80px;
   margin-top: 40px;
   background: white;
   border-bottom: 2px solid #ddd;
 }
+
 .topic:nth-child(even) {
   background: #ececec;
 }
+
 .topic h2 {
   margin-top: 0;
   color: #0a2a6c;
 }
+
 footer {
   background: #009ee8;
   padding: 30px;
@@ -59,3 +82,41 @@ footer {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
+
+/* 📱 RESPONSIVE */
+@media (max-width: 700px) {
+  header {
+    padding: 18px 20px;
+  }
+
+  footer p{
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  .topic {
+    padding: 100px 15px 60px;
+  }
+
+  .topic h2 {
+    font-size: 20px;
+  }
+
+  .topic p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
